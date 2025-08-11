@@ -1,0 +1,104 @@
+Aim
+
+To understand and implement the difference between Abstract Class and Interface in Java with examples.
+
+
+---
+
+Algorithm
+
+For Abstract Class
+
+1. Define an abstract class containing:
+
+At least one abstract method (without body).
+
+Concrete methods (with body) if required.
+
+
+
+2. Create a subclass that extends the abstract class.
+
+
+3. Implement all abstract methods in the subclass.
+
+
+4. Create a main method to create an object of the subclass and call its methods.
+
+
+
+For Interface
+
+1. Define an interface with only method declarations (no body, except default/static methods if needed).
+
+
+2. Create a class that implements the interface.
+
+
+3. Provide definitions for all interface methods in the implementing class.
+
+
+4. Create a main method to create an object of the implementing class and call its methods.
+
+
+
+
+---
+
+Code
+
+// Example to show difference between Abstract Class and Interface
+
+// -------- Abstract Class Example --------
+abstract class Vehicle {
+    abstract void start();  // Abstract method
+
+    void stop() {  // Concrete method
+        System.out.println("Vehicle stopped");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Car started with key");
+    }
+}
+
+// -------- Interface Example --------
+interface Animal {
+    void sound();  // Abstract method
+}
+
+class Dog implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// -------- Main Class --------
+public class Main {
+    public static void main(String[] args) {
+        
+        // Abstract Class usage
+        Vehicle myCar = new Car();
+        myCar.start();
+        myCar.stop();
+        
+        // Interface usage
+        Animal myDog = new Dog();
+        myDog.sound();
+    }
+}
+
+
+---
+
+Result
+
+Output:
+
+Car started with key
+Vehicle stopped
+Dog barks
