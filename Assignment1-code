@@ -1,0 +1,44 @@
+package kabi.java;
+
+// -------- Abstract Class Example --------
+abstract class Vehicle {
+    abstract void start();  // Abstract method
+
+    void stop() {  // Concrete method
+        System.out.println("Vehicle stopped");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    void start() {
+        System.out.println("Car started with key");
+    }
+}
+
+// -------- Interface Example --------
+interface Animal {
+    void sound();  // Abstract method
+}
+
+class Dog implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// -------- Main Class --------
+public class Kabi {
+    public static void main(String[] args) {
+        
+        System.out.println("---- Abstract Class Example ----");
+        Vehicle myCar = new Car();
+        myCar.start();
+        myCar.stop();
+        
+        System.out.println("\n---- Interface Example ----");
+        Animal myDog = new Dog();
+        myDog.sound();
+    }
+}
